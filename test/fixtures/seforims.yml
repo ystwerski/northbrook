@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  beraishis: MyString
+  shemos: MyString
+  vayikrah: MyString
+  bamidbar: MyString
+  devorim: MyString
+
+two:
+  beraishis: MyString
+  shemos: MyString
+  vayikrah: MyString
+  bamidbar: MyString
+  devorim: MyString

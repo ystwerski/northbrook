@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  people_id: MyString
+  parsha_id: MyString
+  times_read: 1
+
+two:
+  people_id: MyString
+  parsha_id: MyString
+  times_read: 1

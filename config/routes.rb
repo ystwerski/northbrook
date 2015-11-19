@@ -13,6 +13,11 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  namespace :api do
+    namespace :v1 do
+      resources :rotations
+    end
+  end  
   root 'rotations#index'
   resources :rotations
 end
