@@ -1,10 +1,21 @@
 <div ng-app="app">
-{{<%= 10 * 10 %> + 100}}
+  <div ng-controller="rotationsCtrl">
+<div class="top">
+<p>Create an account</p>
+</div>
+<div class="top2">
+  <p><button type="button" class="btn btn-success"></button> = Parsha is available. Click to Reserve.</p>
+</div>
+<div class="top2">
+  <p><button type="button" class="btn btn-danger"></button> = Parsha is unavailable. Click to Cancel.</p>
+</div>
+<br>
 <h1>Northbrook Krias Hatorah Schedule</h1>
-<div class="Beraishis">
+<div class="Beraishis" ng-init="getInfo()">
   <!-- <div class="center"> -->
     <h3>Beraishis</h3>
-    <button type="button" class="btn btn-success" ng-model="showInfo()">Beraishis</button>
+    <button type="button" class="btn btn-success" ng-if="apiData.parshious[0].available">Beraishis</button>
+    <button type="button" class="btn btn-danger" ng-if="!apiData.parshious[0].available">Beraishis</button>
     <br>
     <br>
     <button type="button" class="btn btn-success">Noach</button>
@@ -166,5 +177,6 @@
   <br>
   <br>
   <button type="button" class="btn btn-success">H'azinu</button>
+</div>
 </div>
 </div>
