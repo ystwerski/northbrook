@@ -4,62 +4,86 @@
       <p>Create an account</p>
     </div>
     <div class="top2">
-      <p><button type="button" class="btn btn-success"></button> = Parsha is available. Click to Reserve.</p>
+      <p><button type="button" class="btn btn-success">available</button> - Click to Reserve.</p>
     </div>
     <div class="top2">
-      <p><button type="button" class="btn btn-danger"></button> = Parsha is unavailable. Click to Cancel.</p>
+      <p><button type="button" class="btn btn-danger">unavailable</button> - Click to Cancel.</p>
     </div>
     <br>
     <h1>Northbrook Krias Hatorah Schedule</h1>
-    <!-- <div class="center"> -->
     <div class="Beraishis">
       <h3>Beraishis</h3>
       <div ng-repeat="parsha in beraishis">
-        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" ng-click="showForm = !showForm">{{parsha.name}}</button>
-        <br>
-        <input ng-if="showForm" ng-model="personFirstName" placeholder="email, full name, or phone number">
-        <input ng-if="showForm" ng-model="personPassword" placeholder="password">
-        <br>
+        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
+        <div ng-if="showForm" class="jumbotron">
+          <input ng-model="personFirstName" placeholder="email, full name, or phone number">
+          <br>
+          <input ng-model="personPassword" placeholder="password">
+          <br>
+          <button type="button" class="btn btn-primary" id="real_btn">{{correctMessage(parsha)}}</button>
+          <br>
+          <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
+        </div>
       </div>
     </div>
     <div class="Shemos">
       <h3>Shemos</h3>
       <div ng-repeat="parsha in shemos">
-        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" ng-click="showForm = !showForm">{{parsha.name}}</button>
-        <br>
-        <input ng-if="showForm" ng-model="personFirstName" placeholder="email, full name, or phone number">
-        <input ng-if="showForm" ng-model="personPassword" placeholder="password">
-        <br>
+        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
+        <div ng-if="showForm" class="jumbotron">
+          <input ng-model="personFirstName" placeholder="email, full name, or phone number">
+          <br>
+          <input ng-model="personPassword" placeholder="password">
+          <br>
+          <button type="button" class="btn btn-primary" id="real_btn">{{correctMessage(parsha)}}</button>
+          <br>
+          <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
+        </div>
       </div>
     </div>
     <div class="Vayikrah">
       <h3>Vayikrah</h3>
       <div ng-repeat="parsha in vayikrah">
-        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" ng-click="showForm = !showForm">{{parsha.name}}</button>
-        <br>
-        <input ng-if="showForm" ng-model="personFirstName" placeholder="email, full name, or phone number">
-        <input ng-if="showForm" ng-model="personPassword" placeholder="password">
-        <br>
+        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
+        <div ng-if="showForm" class="jumbotron">
+          <input ng-model="personFirstName" placeholder="email, full name, or phone number">
+          <br>
+          <input ng-model="personPassword" placeholder="password">
+          <br>
+          <button type="button" class="btn btn-primary" id="real_btn">{{correctMessage(parsha)}}</button>
+          <br>
+          <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
+        </div>
       </div>
     </div>
     <div class="Bamidbar">
       <h3>Bamidbar</h3>
       <div ng-repeat="parsha in bamidbar">
-        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" ng-click="showForm = !showForm">{{parsha.name}}</button>
-        <br>
-        <input ng-if="showForm" ng-model="personFirstName" placeholder="email, full name, or phone number">
-        <input ng-if="showForm" ng-model="personPassword" placeholder="password">
-        <br>
+        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
+        <div ng-if="showForm" class="jumbotron">
+          <input ng-model="personFirstName" placeholder="email, full name, or phone number">
+          <br>
+          <input ng-model="personPassword" placeholder="password">
+          <br>
+          <button type="button" class="btn btn-primary" id="real_btn">{{correctMessage(parsha)}}</button>
+          <br>
+          <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
+        </div>
       </div>
     </div>
     <div class="Devorim">
       <h3>Devorim</h3>
       <div ng-repeat="parsha in devorim">
-        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" ng-click="showForm = !showForm">{{parsha.name}}</button>
-        <br>
-        <input ng-if="showForm" ng-model="personFirstName" placeholder="email, full name, or phone number">
-        <input ng-if="showForm" ng-model="personPassword" placeholder="password">
-        <br>
+        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
+        <div ng-if="showForm" class="jumbotron">
+          <input ng-model="personFirstName" placeholder="email, full name, or phone number">
+          <br>
+          <input ng-model="personPassword" placeholder="password">
+          <br>
+          <button type="button" class="btn btn-primary" id="real_btn">{{correctMessage(parsha)}}</button>
+          <br>
+          <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
+        </div>
       </div>
     </div>
   </div>

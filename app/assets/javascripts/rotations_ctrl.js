@@ -22,6 +22,14 @@
     }
   }
 
+  $scope.correctMessage = function(parsha){
+  	if (parsha.available){
+  		return "Reserve";
+  	} else {
+  		return "Cancel Reservation";
+  	}
+  }
+
   $scope.showForm = false;
 
     window.scope = $scope;

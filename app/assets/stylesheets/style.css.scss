@@ -4,42 +4,54 @@ body{
 
 .Beraishis{
 	float: right;
-	text-align: right;
-	margin-right: 40px;
+	text-align: center;
+	margin-right: 20px;
 }
 
 .Shemos{
 	float: right;
-	text-align:right;
+	text-align: center;
 	margin-right: 175px;
 }
 
 .Vayikrah{
 	float: right;
-	text-align:right;
+	text-align: center;
 	margin-right: 175px;
 }
 
 .Bamidbar{
 	float: right;
-	text-align:right;
+	text-align: center;
 	margin-right: 175px;
 }
 
 .Devorim{
 	float: right;
-	text-align:right;
+	text-align: center;
 	margin-right: 175px;
+}
+
+#real_btn {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+input {
+	width: 300px;
+	margin-top: 20px;
 }
 
 h1 {
 	text-align:center;
+	margin-top: 50px;
 }
 
 .top {
 	float:right;
 	text-align:right;
 	margin-right: 40px;
+	margin-top: 10px;
 }
 
 .top2 {
