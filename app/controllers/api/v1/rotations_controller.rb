@@ -24,8 +24,48 @@ class Api::V1::RotationsController < ApplicationController
         end
       end
   	end
-    # @parshious = Parsha.all
-    # @Persons = Person.all
+  end
+
+  def create
+  	@person = Person.new({
+  	  :first_name => params["first_name"],
+  	  :last_name => params["last_name"],
+  	  :email => params[:email],
+  	  :password => params[:password],
+  	  :phone => params[:phone_number],
+  	  :birthday => params[:birthday],
+  	  :address => params[:address],
+  	  :city => params[:city],
+  	  :state => params[:state]
+  	  })
+  	if @person.save
+  	  flash[:success] = "Congradulations! You have been successfully added to our database. To reserve a shabbos, simply click on the week that you wish to lain, and enter either your password and either your email or your phone number"
+  	  redirect_to api_v1_rotations_path
+  	else
+  	  render json: {errors: @person.errors.full_messages }, status: 422
+  	end
+  end
+
+  def update
+  	# json_first_id = params["first_id"]
+  	json_password = params["password"]
+    @parsha = Parsha.find(params[:id])
+    @person = Person.find_by(:password => json_password)
+    if @person
+      @parsha.update({
+        :available => !@parsha.available,
+        :people_id => @person.id
+      })
+      if @parsha.available
+        @parsha.update({
+          :people_id => nil
+        })
+      end
+      flash[:success] = "Update successfull!"
+    else
+      flash[:warning] = "We didn't find you in our databanks. Please make sure you've typed in your information accurately. If you haven't signed up yet, click above where it says, 'create an accout'. If you can't remember your info, let us know and we'll email it to your listed email address."
+    end
+    redirect_to api_v1_rotations_path
   end
 
 end

@@ -1,90 +1,133 @@
 <div ng-app="app">
   <div ng-controller="rotationsCtrl" ng-init="getInfo()">
-    <div class="top">
-      <p>Create an account</p>
-    </div>
-    <div class="top2">
-      <p><button type="button" class="btn btn-success">available</button> - Click to Reserve.</p>
-    </div>
-    <div class="top2">
-      <p><button type="button" class="btn btn-danger">unavailable</button> - Click to Cancel.</p>
-    </div>
-    <br>
-    <h1>Northbrook Krias Hatorah Schedule</h1>
-    <div class="Beraishis">
-      <h3>Beraishis</h3>
-      <div ng-repeat="parsha in beraishis">
-        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
-        <div ng-if="showForm" class="jumbotron">
-          <input ng-model="personFirstName" placeholder="email, full name, or phone number">
-          <br>
-          <input ng-model="personPassword" placeholder="password">
-          <br>
-          <button type="button" class="btn btn-primary" id="real_btn">{{correctMessage(parsha)}}</button>
-          <br>
-          <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
+
+
+
+    <div ng-switch on="parshious">
+      <div ng-switch-when="true">
+        <div class="top">
+          <p ng-click="switchFormStatus()">Create an account</p>
+        </div>
+        <div class="top2">
+          <p><button type="button" class="btn btn-success">available</button> - Click to Reserve.</p>
+        </div>
+        <div class="top2">
+          <p><button type="button" class="btn btn-danger">unavailable</button> - Click to Cancel.</p>
+        </div>
+        <br>
+        <h1>Northbrook Krias Hatorah Schedule</h1>
+        <div class="Beraishis">
+          <h3>Beraishis</h3>
+          <div ng-repeat="parsha in beraishis">
+            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
+            <div ng-if="showForm" class="jumbotron">
+              <input ng-model="firstId" placeholder="email, full name, or phone number">
+              <br>
+              <input ng-model="password" placeholder="password">
+              <br>
+              <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
+              <br>
+              <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="Shemos">
+          <h3>Shemos</h3>
+          <div ng-repeat="parsha in shemos">
+            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
+            <div ng-if="showForm" class="jumbotron">
+              <input ng-model="firstId" placeholder="email, full name, or phone number">
+              <br>
+              <input ng-model="password" placeholder="password">
+              <br>
+              <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
+              <br>
+              <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="Vayikrah">
+          <h3>Vayikrah</h3>
+          <div ng-repeat="parsha in vayikrah">
+            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
+            <div ng-if="showForm" class="jumbotron">
+              <input ng-model="firstId" placeholder="email, full name, or phone number">
+              <br>
+              <input ng-model="password" placeholder="password">
+              <br>
+              <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
+              <br>
+              <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="Bamidbar">
+          <h3>Bamidbar</h3>
+          <div ng-repeat="parsha in bamidbar">
+            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
+            <div ng-if="showForm" class="jumbotron">
+              <input ng-model="firstId" placeholder="email, full name, or phone number">
+              <br>
+              <input ng-model="password" placeholder="password">
+              <br>
+              <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
+              <br>
+              <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="Devorim">
+          <h3>Devorim</h3>
+          <div ng-repeat="parsha in devorim">
+            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
+            <div ng-if="showForm" class="jumbotron">
+              <input ng-model="firstId" placeholder="email, full name, or phone number">
+              <br>
+              <input ng-model="password" placeholder="password">
+              <br>
+              <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
+              <br>
+              <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
+            </div>
+          </div>
+        </div>
+      </div> <!-- This is end of showing parshious. -->
+
+
+
+
+
+
+
+      <div ng-switch-when="false">
+        <div  class="my_form">
+          <form>
+            <input width="200px;" placeholder="Enter your First Name" ng-model="firstName">
+            <br>
+            <input width="200px;" placeholder="Enter your Last Name" ng-model="lastName">
+            <br>
+            <input width="200px;" placeholder="Enter your Email" ng-model="email">
+            <br>
+            <input width="200px;" placeholder="Choose your password" ng-model="password">
+            <br>
+            <input width="200px;" placeholder="Enter a Phone Number" ng-model="phoneNumber">
+            <br>
+            <input width="200px;" placeholder="Enter your Address" ng-model="address">
+            <br>
+            <input width="200px;" placeholder="City" ng-model="city">
+            <br>
+            <input width="200px;" placeholder="State" ng-model="state">
+            <br>
+            <div class="birthday">Date of Birth<div>
+            <input type="date" width="200px;" ng-model="birthday">
+            <br>
+            <button type="submit" ng-click="switchFormStatus()" class="btn btn-danger form_button1">Cancel</button>
+            <button type="submit" ng-click="addNewPerson(firstName, lastName, email, password, phoneNumber, address, city, state, birthday)" class="btn btn-primary form_button2">Submit</button>
+          </form>
         </div>
       </div>
     </div>
-    <div class="Shemos">
-      <h3>Shemos</h3>
-      <div ng-repeat="parsha in shemos">
-        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
-        <div ng-if="showForm" class="jumbotron">
-          <input ng-model="personFirstName" placeholder="email, full name, or phone number">
-          <br>
-          <input ng-model="personPassword" placeholder="password">
-          <br>
-          <button type="button" class="btn btn-primary" id="real_btn">{{correctMessage(parsha)}}</button>
-          <br>
-          <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
-        </div>
-      </div>
-    </div>
-    <div class="Vayikrah">
-      <h3>Vayikrah</h3>
-      <div ng-repeat="parsha in vayikrah">
-        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
-        <div ng-if="showForm" class="jumbotron">
-          <input ng-model="personFirstName" placeholder="email, full name, or phone number">
-          <br>
-          <input ng-model="personPassword" placeholder="password">
-          <br>
-          <button type="button" class="btn btn-primary" id="real_btn">{{correctMessage(parsha)}}</button>
-          <br>
-          <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
-        </div>
-      </div>
-    </div>
-    <div class="Bamidbar">
-      <h3>Bamidbar</h3>
-      <div ng-repeat="parsha in bamidbar">
-        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
-        <div ng-if="showForm" class="jumbotron">
-          <input ng-model="personFirstName" placeholder="email, full name, or phone number">
-          <br>
-          <input ng-model="personPassword" placeholder="password">
-          <br>
-          <button type="button" class="btn btn-primary" id="real_btn">{{correctMessage(parsha)}}</button>
-          <br>
-          <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
-        </div>
-      </div>
-    </div>
-    <div class="Devorim">
-      <h3>Devorim</h3>
-      <div ng-repeat="parsha in devorim">
-        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
-        <div ng-if="showForm" class="jumbotron">
-          <input ng-model="personFirstName" placeholder="email, full name, or phone number">
-          <br>
-          <input ng-model="personPassword" placeholder="password">
-          <br>
-          <button type="button" class="btn btn-primary" id="real_btn">{{correctMessage(parsha)}}</button>
-          <br>
-          <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
-        </div>
-      </div>
-    </div>
+
+
   </div>
 </div>

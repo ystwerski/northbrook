@@ -1,3 +1,3 @@
 class Sefer < ActiveRecord::Base
-has_many :parshas
+  has_many :parshas
 end
