@@ -1,182 +1,66 @@
 <div ng-app="app">
-  <div ng-controller="rotationsCtrl">
-<div class="top">
-<p>Create an account</p>
-</div>
-<div class="top2">
-  <p><button type="button" class="btn btn-success"></button> = Parsha is available. Click to Reserve.</p>
-</div>
-<div class="top2">
-  <p><button type="button" class="btn btn-danger"></button> = Parsha is unavailable. Click to Cancel.</p>
-</div>
-<br>
-<h1>Northbrook Krias Hatorah Schedule</h1>
-<div class="Beraishis" ng-init="getInfo()">
-  <!-- <div class="center"> -->
-    <h3>Beraishis</h3>
-    <button type="button" class="btn btn-success" ng-if="apiData.parshious[0].available">Beraishis</button>
-    <button type="button" class="btn btn-danger" ng-if="!apiData.parshious[0].available">Beraishis</button>
+  <div ng-controller="rotationsCtrl" ng-init="getInfo()">
+    <div class="top">
+      <p>Create an account</p>
+    </div>
+    <div class="top2">
+      <p><button type="button" class="btn btn-success"></button> = Parsha is available. Click to Reserve.</p>
+    </div>
+    <div class="top2">
+      <p><button type="button" class="btn btn-danger"></button> = Parsha is unavailable. Click to Cancel.</p>
+    </div>
     <br>
-    <br>
-    <button type="button" class="btn btn-success">Noach</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-success">Lech-Licha</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-success">Va'Yairah</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-success">Chaya Sarah</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-success">Toldos</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-success">Vayaitzai</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-success">Vayishlach</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-success">Vayaishev</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-success">Meekaitz</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-success">Vayeegash</button>
-    <br>
-    <br>
-    <button type="button" class="btn btn-success">Vayichee</button>
-  <!-- </div> -->
-</div>
-<div class="Shemos">
-  <h3>Shemos</h3>
-  <button type="button" class="btn btn-success">Shemos</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">V'Airah</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Bo</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">B'shalach</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Yisro</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Mishpatim</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Trumah</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">T'tzaveh</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Ki Sisah</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">V'yakhel</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">P'kudai</button>
-</div>
-<div class="Vayikrah">
-  <h3>Vayikrah</h3>
-  <button type="button" class="btn btn-success">Vayikrah</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Tzav</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Shmini</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Tazriah</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Mitzorah</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Achrai mos</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Kidoshim</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Emor</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">B'har</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">B'chukosai</button>
-</div>
-<div class="Bamidbar">
-  <h3>Bamidbar</h3>
-  <button type="button" class="btn btn-success">Bamidbar</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Nosoh</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Ba'haloschu</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Shlach</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Korach</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Chukas</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Baluck</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Pinchos</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Matos</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Mosai</button>
-</div>
-<div class="Devorim">
-  <h3>Devorim</h3>
-  <button type="button" class="btn btn-success">Devorim</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">V'eschanun</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Eikev</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">R'ei</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Shoftim</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Ki Seitzai</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Ki Sovoh</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">Nitzavim</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">V'yailech</button>
-  <br>
-  <br>
-  <button type="button" class="btn btn-success">H'azinu</button>
-</div>
-</div>
+    <h1>Northbrook Krias Hatorah Schedule</h1>
+    <!-- <div class="center"> -->
+    <div class="Beraishis">
+      <h3>Beraishis</h3>
+      <div ng-repeat="parsha in beraishis">
+        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" ng-click="showForm = !showForm">{{parsha.name}}</button>
+        <br>
+        <input ng-if="showForm" ng-model="personFirstName" placeholder="email, full name, or phone number">
+        <input ng-if="showForm" ng-model="personPassword" placeholder="password">
+        <br>
+      </div>
+    </div>
+    <div class="Shemos">
+      <h3>Shemos</h3>
+      <div ng-repeat="parsha in shemos">
+        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" ng-click="showForm = !showForm">{{parsha.name}}</button>
+        <br>
+        <input ng-if="showForm" ng-model="personFirstName" placeholder="email, full name, or phone number">
+        <input ng-if="showForm" ng-model="personPassword" placeholder="password">
+        <br>
+      </div>
+    </div>
+    <div class="Vayikrah">
+      <h3>Vayikrah</h3>
+      <div ng-repeat="parsha in vayikrah">
+        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" ng-click="showForm = !showForm">{{parsha.name}}</button>
+        <br>
+        <input ng-if="showForm" ng-model="personFirstName" placeholder="email, full name, or phone number">
+        <input ng-if="showForm" ng-model="personPassword" placeholder="password">
+        <br>
+      </div>
+    </div>
+    <div class="Bamidbar">
+      <h3>Bamidbar</h3>
+      <div ng-repeat="parsha in bamidbar">
+        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" ng-click="showForm = !showForm">{{parsha.name}}</button>
+        <br>
+        <input ng-if="showForm" ng-model="personFirstName" placeholder="email, full name, or phone number">
+        <input ng-if="showForm" ng-model="personPassword" placeholder="password">
+        <br>
+      </div>
+    </div>
+    <div class="Devorim">
+      <h3>Devorim</h3>
+      <div ng-repeat="parsha in devorim">
+        <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" ng-click="showForm = !showForm">{{parsha.name}}</button>
+        <br>
+        <input ng-if="showForm" ng-model="personFirstName" placeholder="email, full name, or phone number">
+        <input ng-if="showForm" ng-model="personPassword" placeholder="password">
+        <br>
+      </div>
+    </div>
+  </div>
 </div>

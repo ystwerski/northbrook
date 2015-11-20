@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119063401) do
+ActiveRecord::Schema.define(version: 20151120013821) do
 
   create_table "parshas", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 20151119063401) do
     t.string   "state",      limit: 255
     t.integer  "past_id",    limit: 4
     t.text     "notes",      limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sefers", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

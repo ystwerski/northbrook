@@ -6,10 +6,25 @@
   $scope.getInfo = function(){
   	$http.get("/api/v1/rotations.json").then(function(response){
   		$scope.apiData = response.data;
+  		$scope.beraishis = $scope.apiData.beraishis;
+  		$scope.shemos = $scope.apiData.shemos;
+  		$scope.vayikrah = $scope.apiData.vayikrah;
+  		$scope.bamidbar = $scope.apiData.bamidbar;
+  		$scope.devorim = $scope.apiData.devorim;
   	});
   }
 
-    window.scope = $scope;
+  $scope.checkAvailable = function(parsha){
+    if (parsha.available){
+    	return "success";
+    } else {
+    	return "danger";
+    }
+  }
 
+  $scope.showForm = false;
+
+    window.scope = $scope;
+    
   }]);
 })();
