@@ -22,9 +22,9 @@
           <div ng-repeat="parsha in beraishis">
             <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
             <div ng-if="showForm" class="jumbotron">
-              <input ng-model="firstId" placeholder="email, full name, or phone number">
+              <input ng-model="firstId" placeholder="Enter your Email">
               <br>
-              <input ng-model="password" placeholder="password">
+              <input ng-model="password" placeholder="Enter the Password for your Account">
               <br>
               <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
               <br>
@@ -37,9 +37,9 @@
           <div ng-repeat="parsha in shemos">
             <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
             <div ng-if="showForm" class="jumbotron">
-              <input ng-model="firstId" placeholder="email, full name, or phone number">
+              <input ng-model="firstId" placeholder="Enter your Email">
               <br>
-              <input ng-model="password" placeholder="password">
+              <input ng-model="password" placeholder="Enter the Password for your Account">
               <br>
               <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
               <br>
@@ -52,9 +52,9 @@
           <div ng-repeat="parsha in vayikrah">
             <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
             <div ng-if="showForm" class="jumbotron">
-              <input ng-model="firstId" placeholder="email, full name, or phone number">
+              <input ng-model="firstId" placeholder="Enter your Email">
               <br>
-              <input ng-model="password" placeholder="password">
+              <input ng-model="password" placeholder="Enter the Password for your Account">
               <br>
               <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
               <br>
@@ -67,9 +67,9 @@
           <div ng-repeat="parsha in bamidbar">
             <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
             <div ng-if="showForm" class="jumbotron">
-              <input ng-model="firstId" placeholder="email, full name, or phone number">
+              <input ng-model="firstId" placeholder="Enter your Email">
               <br>
-              <input ng-model="password" placeholder="password">
+              <input ng-model="password" placeholder="Enter the Password for your Account">
               <br>
               <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
               <br>
@@ -82,9 +82,9 @@
           <div ng-repeat="parsha in devorim">
             <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
             <div ng-if="showForm" class="jumbotron">
-              <input ng-model="firstId" placeholder="email, full name, or phone number">
+              <input ng-model="firstId" placeholder="Enter your Email">
               <br>
-              <input ng-model="password" placeholder="password">
+              <input ng-model="password" placeholder="Enter the Password for your Account">
               <br>
               <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
               <br>
@@ -109,7 +109,7 @@
             <br>
             <input width="200px;" placeholder="Enter your Email" ng-model="email">
             <br>
-            <input width="200px;" placeholder="Choose your password" ng-model="password">
+            <input width="200px;" type="password" placeholder="Choose your password" ng-model="password">
             <br>
             <input width="200px;" placeholder="Enter a Phone Number" ng-model="phoneNumber">
             <br>

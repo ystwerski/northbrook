@@ -46,19 +46,23 @@ class Api::V1::RotationsController < ApplicationController
   end
 
   def update
-  	# json_first_id = params["first_id"]
+  	json_first_id = params["first_id"]
   	json_password = params["password"]
     @parsha = Parsha.find(params[:id])
-    @person = Person.find_by(:password => json_password)
-    if @person
+    @person = Person.find_by(:password => json_password, :email => json_first_id)
+    if @person && @parsha.available
       @parsha.update({
-        :available => !@parsha.available,
+        :available => false,
         :person_id => @person.id
       })
-      if @parsha.available
+    elsif @person && !@parsha.available
+      if @parsha.person_id == @person.id
         @parsha.update({
+          :available => true,
           :person_id => nil
         })
+      else
+        flash[:warning] = "Sorry, that parsha is already taken by someone else. Please choose a Parsha that is green, and avoid choosing the red ones."
       end
       flash[:success] = "Update successfull!"
     else
