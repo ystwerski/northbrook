@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120013821) do
+ActiveRecord::Schema.define(version: 20151120082729) do
 
   create_table "parshas", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.boolean  "available",  limit: 1,   default: true
-    t.integer  "people_id",  limit: 4
+    t.integer  "person_id",  limit: 4
     t.integer  "past_id",    limit: 4
     t.integer  "sefer_id",   limit: 4
     t.date     "date"
