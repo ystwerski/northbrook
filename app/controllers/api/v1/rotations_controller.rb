@@ -2,7 +2,6 @@ class Api::V1::RotationsController < ApplicationController
   
   def index
   	@seforim = Sefer.all
-  	@individual_sefarim = {}
   	@beraishis = []
   	@shemos = []
     @vayikrah = []
@@ -54,11 +53,11 @@ class Api::V1::RotationsController < ApplicationController
     if @person
       @parsha.update({
         :available => !@parsha.available,
-        :people_id => @person.id
+        :person_id => @person.id
       })
       if @parsha.available
         @parsha.update({
-          :people_id => nil
+          :person_id => nil
         })
       end
       flash[:success] = "Update successfull!"
