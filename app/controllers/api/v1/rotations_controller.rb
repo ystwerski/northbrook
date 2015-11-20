@@ -39,7 +39,7 @@ class Api::V1::RotationsController < ApplicationController
   	  })
   	if @person.save
   	  flash[:success] = "Congradulations! You have been successfully added to our database. To reserve a shabbos, simply click on the week that you wish to lain, and enter either your password and either your email or your phone number"
-  	  redirect_to api_v1_rotations_path
+  	  # redirect_to api_v1_rotations_path
   	else
   	  render json: {errors: @person.errors.full_messages }, status: 422
   	end
@@ -64,7 +64,7 @@ class Api::V1::RotationsController < ApplicationController
     else
       flash[:warning] = "We didn't find you in our databanks. Please make sure you've typed in your information accurately. If you haven't signed up yet, click above where it says, 'create an accout'. If you can't remember your info, let us know and we'll email it to your listed email address."
     end
-    redirect_to api_v1_rotations_path
+    # redirect_to api_v1_rotations_path
   end
 
 end
