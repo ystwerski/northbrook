@@ -4,9 +4,9 @@
 
 
     <div ng-switch on="parshious">
-      <div ng-switch-when="true">
+      <div ng-switch-when="index">
         <div class="top">
-          <button class="btn btn-info" ng-click="switchFormStatus()">Create an Account</button>
+          <button class="btn btn-info" ng-click="switchToNew()">Create an Account</button>
           <!-- <p ng-click="switchFormStatus()">Create an account</p> -->
         </div>
         <div class="top2">
@@ -20,76 +20,76 @@
         <div class="Beraishis">
           <h3>Beraishis</h3>
           <div ng-repeat="parsha in beraishis">
-            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
-            <div ng-if="showForm" class="jumbotron">
+            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            <!-- <div ng-if="showForm" class="jumbotron">
               <input ng-model="firstId" placeholder="Enter your Email">
               <br>
               <input ng-model="password" placeholder="Enter the Password for your Account">
               <br>
               <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
               <br>
-              <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
-            </div>
+              <p>To create an account, please click above where it says, "creat an account"</p>
+            </div> -->
           </div>
         </div>
         <div class="Shemos">
           <h3>Shemos</h3>
           <div ng-repeat="parsha in shemos">
-            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
-            <div ng-if="showForm" class="jumbotron">
+            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            <!-- <div ng-if="showForm" class="jumbotron">
               <input ng-model="firstId" placeholder="Enter your Email">
               <br>
               <input ng-model="password" placeholder="Enter the Password for your Account">
               <br>
               <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
               <br>
-              <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
-            </div>
+              <p>To create an account, please click above where it says, "creat an account"</p>
+            </div> -->
           </div>
         </div>
         <div class="Vayikrah">
           <h3>Vayikrah</h3>
           <div ng-repeat="parsha in vayikrah">
-            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
-            <div ng-if="showForm" class="jumbotron">
+            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            <!-- <div ng-if="showForm" class="jumbotron">
               <input ng-model="firstId" placeholder="Enter your Email">
               <br>
               <input ng-model="password" placeholder="Enter the Password for your Account">
               <br>
               <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
-              <br>
+              <br> -->
               <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
-            </div>
+            <!-- </div> -->
           </div>
         </div>
         <div class="Bamidbar">
           <h3>Bamidbar</h3>
           <div ng-repeat="parsha in bamidbar">
-            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
-            <div ng-if="showForm" class="jumbotron">
+            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            <!-- <div ng-if="showForm" class="jumbotron">
               <input ng-model="firstId" placeholder="Enter your Email">
               <br>
               <input ng-model="password" placeholder="Enter the Password for your Account">
               <br>
               <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
-              <br>
+              <br> -->
               <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
-            </div>
+            <!-- </div> -->
           </div>
         </div>
         <div class="Devorim">
           <h3>Devorim</h3>
           <div ng-repeat="parsha in devorim">
-            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="showForm = !showForm">{{parsha.name}}</button>
-            <div ng-if="showForm" class="jumbotron">
+            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            <!-- <div ng-if="showForm" class="jumbotron">
               <input ng-model="firstId" placeholder="Enter your Email">
               <br>
               <input ng-model="password" placeholder="Enter the Password for your Account">
               <br>
               <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parsha, firstId, password)">{{correctMessage(parsha)}}</button>
-              <br>
+              <br> -->
               <!-- <p>To create an account, please click above where it says, "creat an account"</p> -->
-            </div>
+            <!-- </div> -->
           </div>
         </div>
       </div> <!-- This is end of showing parshious. -->
@@ -100,7 +100,7 @@
 
 
 
-      <div ng-switch-when="false">
+      <div ng-switch-when="new">
         <div  class="my_form">
           <form>
             <input width="200px;" placeholder="Enter your First Name" ng-model="firstName">
@@ -120,9 +120,11 @@
             <input width="200px;" placeholder="State" ng-model="state">
             <br>
             <div class="birthday">Date of Birth<div>
-            <input type="date" width="200px;" ng-model="birthday">
-            <br>
-            <button type="submit" ng-click="switchFormStatus()" class="btn btn-danger form_button1">Cancel</button>
+              <input type="date" width="200px;" ng-model="birthday">
+              <br>
+            </div>
+            <!-- <input width="200px;" placeholder="Password for adminis ONLY. Non-admins ignore this text box." ng-model="admin" class="my_test"> -->
+            <button type="submit" ng-click="switchToIndex()" class="btn btn-danger form_button1">Cancel</button>
             <button type="submit" ng-click="addNewPerson(firstName, lastName, email, password, phoneNumber, address, city, state, birthday)" class="btn btn-primary form_button2">Submit</button>
           </form>
         </div>
@@ -130,5 +132,20 @@
     </div>
 
 
+    <div ng-switch-when="show">
+      <p>{{parshaOfInterest.name}}</p>
+      <input ng-model="firstId" placeholder="Enter your Email">
+      <br>
+      <input ng-model="password" placeholder="Enter the Password for your Account">
+      <br>
+      <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parshaOfInterest, firstId, password)">{{correctMessage(parshaOfInterest)}}</button>
+    </div>
+
+
+
   </div>
+</div>
+
+
+</div>
 </div>

@@ -32,15 +32,24 @@
 
   $scope.showForm = false;
 
-  $scope.parshious = true;
+  $scope.parshious = "index";
 
-  $scope.switchFormStatus = function(){
-  	$scope.parshious = !$scope.parshious;
+  $scope.switchToNew = function(){
+  	$scope.parshious = "new";
+  }
+
+  $scope.switchToIndex = function(){
+    $scope.parshious = "index";
+  }
+
+   $scope.switchToShow = function(parsha){
+    $scope.parshious = "show";
+    $scope.parshaOfInterest = parsha;
   }
 
   $scope.addNewPerson = function(firstName, lastName, email, password, phoneNumber, address, city, state, birthday){
   	var person = {first_name: firstName, last_name: lastName, email: email, password: password, phone_number: phoneNumber, address: address, city: city, state: state, birthday: birthday};
-  	$http.post("api/v1/rotations.json", person).then(function(response){
+  	$http.post("api/v1/persons.json", person).then(function(response){
        $scope.errors = null;
   	}, function(errors){
   		$scope.errors = error.data.errors;
@@ -58,8 +67,8 @@
     })
     $scope.firstId = ""
     $scope.password = ""
-    $scope.showForm = false;
     $scope.getInfo();
+    $scope.parshious = "index";
   }
 
     window.scope = $scope;

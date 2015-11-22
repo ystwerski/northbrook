@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :rotations
+      resources :persons
     end
   end  
   root 'rotations#index'
