@@ -132,12 +132,16 @@
     </div>
 
 
-    <div ng-switch-when="show">
-      <p>{{parshaOfInterest.name}}</p>
+    <div ng-switch-when="show" class="my_form">
+      <p>PARSHA NAME: {{parshaOfInterest.name}}</p>
+      <p>STATUS: {{parshaOfInterest.available}}</p>
+      <p>BAL KORAI INFO: Click to View</p>
+      <p>
       <input ng-model="firstId" placeholder="Enter your Email">
       <br>
       <input ng-model="password" placeholder="Enter the Password for your Account">
       <br>
+      <button ng-click="switchToIndex()" class="btn btn-danger">Cancel</button>
       <button type="button" class="btn btn-primary" id="real_btn" ng-click="reserveParsha(parshaOfInterest, firstId, password)">{{correctMessage(parshaOfInterest)}}</button>
     </div>
 
