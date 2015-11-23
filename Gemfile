@@ -28,6 +28,8 @@ gem 'quiet_assets'
 gem 'pry', '~> 0.10.3'
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

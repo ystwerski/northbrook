@@ -50,5 +50,8 @@ test:
 production:
   <<: *default
   database: northbrook_production
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   username: northbrook
   password: <%= ENV['NORTHBROOK_DATABASE_PASSWORD'] %>
