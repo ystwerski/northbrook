@@ -14,6 +14,22 @@
   	});
   }
 
+  $scope.getPersonData = function(person_id){
+    if (person_id){
+      $http.get("/api/v1/persons/" + person_id + ".json").then(function(response){
+        $scope.personData = response.data;
+        // $scope.personData = $scope.personApiData.person_data;
+      });
+    } else {
+        $http.get("/api/v1/persons.json").then(function(response){
+          var apiAllPersonsData = response.data;
+          $scope.allPersonsData = apiAllPersonsData.all_persons_info;
+        });
+      }
+    $scope.showPersonData = false;
+    $scope.showAllPersonsData = false;
+  }
+
   $scope.checkAvailable = function(parsha){
     if (parsha.available){
     	return "success";

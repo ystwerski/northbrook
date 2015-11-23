@@ -1,5 +1,13 @@
 class Api::V1::PersonsController < ApplicationController
 
+  def index
+    @persons = Person.all
+  end
+
+  def show
+    @person = Person.find(params[:id])
+  end
+
   def create
   	@person = Person.new({
   	  :first_name => params["first_name"],
