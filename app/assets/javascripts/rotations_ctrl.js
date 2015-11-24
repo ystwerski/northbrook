@@ -70,7 +70,7 @@
   	}, function(errors){
   		$scope.errors = error.data.errors;
   	})
-  	$scope.parshious = true;
+  	$scope.parshious = "index";
   }
 
   $scope.reserveParsha = function(parsha, firstId, password){

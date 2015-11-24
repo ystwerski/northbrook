@@ -34,26 +34,26 @@ until parshas[index] == "ויקרא"
   index += 1
 end
 
-until parshas[index] == "ויקרא"
+until parshas[index] == "במדבר"
   Parsha.create({
   	:name => parshas[index],
-  	:sefer_id => 2
+  	:sefer_id => 3
   })
   index += 1
 end
 
-until parshas[index] == "ויקרא"
+until parshas[index] == "דברים"
   Parsha.create({
   	:name => parshas[index],
-  	:sefer_id => 2
+  	:sefer_id => 4
   })
   index += 1
 end
 
-until parshas[index] == "ויקרא"
+until parshas[index] == nil
   Parsha.create({
   	:name => parshas[index],
-  	:sefer_id => 2
+  	:sefer_id => 5
   })
   index += 1
 end
