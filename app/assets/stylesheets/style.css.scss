@@ -1,4 +1,5 @@
 body{
+	background-image: url("<%= asset_path('squared_metal.png') %>");
 	background-image: url("squared_metal.png");
 }
 
