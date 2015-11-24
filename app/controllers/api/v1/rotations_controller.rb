@@ -10,15 +10,15 @@ class Api::V1::RotationsController < ApplicationController
   	@seforim.each do |sefer|
       parshious = sefer.parshas
       parshious.each do |parsha|
-        if parsha.sefer.name == "Beraishis"
+        if parsha.sefer.name == "בראשית"
           @beraishis << parsha
-        elsif parsha.sefer.name == "Shemos"
+        elsif parsha.sefer.name == "שמות"
         	@shemos << parsha
-        elsif parsha.sefer.name == "Vayikrah"
+        elsif parsha.sefer.name == "ויקרא"
         	@vayikrah << parsha
-        elsif parsha.sefer.name == "Bamidbar"
+        elsif parsha.sefer.name == "במדבר"
         	@bamidbar << parsha
-        elsif parsha.sefer.name == "Devorim"
+        elsif parsha.sefer.name == "דברים"
         	@devorim << parsha
         end
       end

@@ -1,4 +1,5 @@
- t.string :beraishis
+
+ t.string :תישארב
       t.string :noach
       t.string :lech_licha
       t.string :vayairah
