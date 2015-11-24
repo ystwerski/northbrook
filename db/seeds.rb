@@ -1,59 +1,66 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# # parshas = ["תישארב", "חנ", "ךל-ךל", "אריו", "הרש ייח", ]
-
-# seforim = ["בראשית", "שמות", "ויקרא", "במדבר", "דברים"]
-
-# parshas = ["בראשית", "נח", "לך-לך", "וירא", "חיי שרה", "תולדות", "ויצא", "וישלח", "וישב", "מקץ", "ויגש", "ויחי", "שמות", "וארא", "בא", "בשלח", "יתרו", "משפטים", "תרומה", "תצוה", "כי-תשא", "ויקהל", "פקודי", "ויקרא", "צו", "שמיני", "תזריע", "מצורע", "אחרי-מות", "קדושים", "אמור", "בהר", "בחקתי", "במדבר", "נשא", "בהעלתך", "שלח", "קרח", "חקת", "בלק", "פינחס", "מטות", "מסעי", "דברים", "ואתחנן", "עקב", "ראה", "שופטים", "כי-תצא", "כי-תבוא", "נצבים", "וילך", "האזינו"]
-
-# seforim.each do |sefer|
-#   Sefer.create({:name => sefer})
-# end
-
-# index = 0
-
-# until parshas[index] == "שמות"
-#   Parsha.create({
-#   	:name => parshas[index],
-#   	:sefer_id => 1
-#   })
-#   index += 1
-# end
-
-# until parshas[index] == "ויקרא"
-#   Parsha.create({
-#   	:name => parshas[index],
-#   	:sefer_id => 2
-#   })
-#   index += 1
-# end
-
-# until parshas[index] == "במדבר"
-#   Parsha.create({
-#   	:name => parshas[index],
-#   	:sefer_id => 3
-#   })
-#   index += 1
-# end
-
-# until parshas[index] == "דברים"
-#   Parsha.create({
-#   	:name => parshas[index],
-#   	:sefer_id => 4
-#   })
-#   index += 1
-# end
-
-# until parshas[index] == nil
-#   Parsha.create({
-#   	:name => parshas[index],
-#   	:sefer_id => 5
-#   })
-#   index += 1
-# end
+Parsha.create!([
+  {name: "בראשית", available: true, person_id: nil, past_id: nil, sefer_id: 1, date: nil},
+  {name: "נח", available: true, person_id: nil, past_id: nil, sefer_id: 1, date: nil},
+  {name: "לך-לך", available: true, person_id: nil, past_id: nil, sefer_id: 1, date: nil},
+  {name: "וירא", available: true, person_id: nil, past_id: nil, sefer_id: 1, date: nil},
+  {name: "חיי-שרה", available: true, person_id: nil, past_id: nil, sefer_id: 1, date: nil},
+  {name: "תולדות", available: true, person_id: nil, past_id: nil, sefer_id: 1, date: nil},
+  {name: "ויצא", available: true, person_id: nil, past_id: nil, sefer_id: 1, date: nil},
+  {name: "וישלח", available: false, person_id: 1, past_id: nil, sefer_id: 1, date: nil},
+  {name: "וישב", available: true, person_id: nil, past_id: nil, sefer_id: 1, date: nil},
+  {name: "מקץ", available: true, person_id: nil, past_id: nil, sefer_id: 1, date: nil},
+  {name: "ויגש", available: true, person_id: nil, past_id: nil, sefer_id: 1, date: nil},
+  {name: "ויחי", available: false, person_id: 2, past_id: nil, sefer_id: 1, date: nil},
+  {name: "שמות", available: true, person_id: nil, past_id: nil, sefer_id: 2, date: nil},
+  {name: "וארא", available: true, person_id: nil, past_id: nil, sefer_id: 2, date: nil},
+  {name: "בא", available: true, person_id: nil, past_id: nil, sefer_id: 2, date: nil},
+  {name: "בשלח", available: true, person_id: nil, past_id: nil, sefer_id: 2, date: nil},
+  {name: "יתרו", available: true, person_id: nil, past_id: nil, sefer_id: 2, date: nil},
+  {name: "משפטים", available: true, person_id: nil, past_id: nil, sefer_id: 2, date: nil},
+  {name: "תרומה", available: true, person_id: nil, past_id: nil, sefer_id: 2, date: nil},
+  {name: "תצוה", available: true, person_id: nil, past_id: nil, sefer_id: 2, date: nil},
+  {name: "כי-תשא", available: true, person_id: nil, past_id: nil, sefer_id: 2, date: nil},
+  {name: "ויקהל", available: true, person_id: nil, past_id: nil, sefer_id: 2, date: nil},
+  {name: "פקודי", available: true, person_id: nil, past_id: nil, sefer_id: 2, date: nil},
+  {name: "ויקרא", available: true, person_id: nil, past_id: nil, sefer_id: 3, date: nil},
+  {name: "צו", available: true, person_id: nil, past_id: nil, sefer_id: 3, date: nil},
+  {name: "שמיני", available: true, person_id: nil, past_id: nil, sefer_id: 3, date: nil},
+  {name: "תזריע", available: true, person_id: nil, past_id: nil, sefer_id: 3, date: nil},
+  {name: "מצורע", available: true, person_id: nil, past_id: nil, sefer_id: 3, date: nil},
+  {name: "אחרי-מות", available: true, person_id: nil, past_id: nil, sefer_id: 3, date: nil},
+  {name: "קדושים", available: true, person_id: nil, past_id: nil, sefer_id: 3, date: nil},
+  {name: "אמור", available: true, person_id: nil, past_id: nil, sefer_id: 3, date: nil},
+  {name: "בהר", available: true, person_id: nil, past_id: nil, sefer_id: 3, date: nil},
+  {name: "בחקתי", available: true, person_id: nil, past_id: nil, sefer_id: 3, date: nil},
+  {name: "במדבר", available: true, person_id: nil, past_id: nil, sefer_id: 4, date: nil},
+  {name: "נשא", available: true, person_id: nil, past_id: nil, sefer_id: 4, date: nil},
+  {name: "בהעלתך", available: true, person_id: nil, past_id: nil, sefer_id: 4, date: nil},
+  {name: "שלח", available: true, person_id: nil, past_id: nil, sefer_id: 4, date: nil},
+  {name: "קרח", available: true, person_id: nil, past_id: nil, sefer_id: 4, date: nil},
+  {name: "חקת", available: true, person_id: nil, past_id: nil, sefer_id: 4, date: nil},
+  {name: "בלק", available: true, person_id: nil, past_id: nil, sefer_id: 4, date: nil},
+  {name: "פינחס", available: true, person_id: nil, past_id: nil, sefer_id: 4, date: nil},
+  {name: "מטות", available: true, person_id: nil, past_id: nil, sefer_id: 4, date: nil},
+  {name: "מסעי", available: true, person_id: nil, past_id: nil, sefer_id: 4, date: nil},
+  {name: "דברים", available: true, person_id: nil, past_id: nil, sefer_id: 5, date: nil},
+  {name: "ואתחנן", available: true, person_id: nil, past_id: nil, sefer_id: 5, date: nil},
+  {name: "עקב", available: true, person_id: nil, past_id: nil, sefer_id: 5, date: nil},
+  {name: "ראה", available: true, person_id: nil, past_id: nil, sefer_id: 5, date: nil},
+  {name: "שופטים", available: true, person_id: nil, past_id: nil, sefer_id: 5, date: nil},
+  {name: "כי-תצא", available: true, person_id: nil, past_id: nil, sefer_id: 5, date: nil},
+  {name: "כי-תבוא", available: true, person_id: nil, past_id: nil, sefer_id: 5, date: nil},
+  {name: "נצבים", available: true, person_id: nil, past_id: nil, sefer_id: 5, date: nil},
+  {name: "וילך", available: true, person_id: nil, past_id: nil, sefer_id: 5, date: nil},
+  {name: "האזינו", available: true, person_id: nil, past_id: nil, sefer_id: 5, date: nil}
+])
+Person.create!([
+  {first_name: "Shlomo", last_name: "Twerski", birthday: nil, email: "ystwerski@testing.com", password: "asdfasdf", phone: "7737156825", address: "6542 N Christiana Ave.", city: "LINCOLNWOOD", state: "IL", past_id: nil, notes: nil},
+  {first_name: "Shlomo Zalman", last_name: "High", birthday: nil, email: "ShlomoZ@skokie.edu", password: "dfghdfgh", phone: nil, address: "7200 Carpenter RD.", city: "Skokie", state: "IL", past_id: nil, notes: nil}
+])
+Sefer.create!([
+  {name: "בראשית"},
+  {name: "שמות"},
+  {name: "ויקרא"},
+  {name: "במדבר"},
+  {name: "דברים"}
+])
