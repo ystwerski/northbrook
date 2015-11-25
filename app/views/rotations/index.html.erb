@@ -17,24 +17,25 @@
         </div>
         <br>
         
-        <h1>קריאת התורה ד'נורטברוק</h1>
+        <div class="center">
+          <h1>קריאת התורה ד'נורטברוק</h1>
 
-        <div class="Beraishis">
-          <h3>בראשית</h3>
-          <div ng-repeat="parsha in beraishis">
-            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+          <div class="Beraishis">
+            <h3>בראשית</h3>
+            <div ng-repeat="parsha in beraishis">
+              <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            </div>
           </div>
-        </div>
-        <div class="Shemos">
-          <h3>שמות</h3>
-          <div ng-repeat="parsha in shemos">
-            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+          <div class="Shemos">
+            <h3>שמות</h3>
+            <div ng-repeat="parsha in shemos">
+              <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            </div>
           </div>
-        </div>
-        <div class="Vayikrah">
-          <h3>ויקרא</h3>
-          <div ng-repeat="parsha in vayikrah">
-            <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+          <div class="Vayikrah">
+            <h3>ויקרא</h3>
+            <div ng-repeat="parsha in vayikrah">
+              <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
             </div>
           </div>
           <div class="Bamidbar">
@@ -49,81 +50,82 @@
               <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
             </div>
           </div>
-        </div> <!-- This is end of index. -->
-
-
-
-
-
-
-
-        <div ng-switch-when="new">
-          <div  class="my_form">
-            <form>
-              <input width="200px;" placeholder="Enter your First Name" ng-model="firstName">
-              <br>
-              <input width="200px;" placeholder="Enter your Last Name" ng-model="lastName">
-              <br>
-              <input width="200px;" placeholder="Enter your Email" ng-model="email">
-              <br>
-              <input width="200px;" type="password" placeholder="Choose your password" ng-model="password">
-              <br>
-              <input width="200px;" placeholder="Enter a Phone Number" ng-model="phoneNumber">
-              <br>
-              <input width="200px;" placeholder="Enter your Address" ng-model="address">
-              <br>
-              <input width="200px;" placeholder="City" ng-model="city">
-              <br>
-              <input width="200px;" placeholder="State" ng-model="state">
-              <br>
-              <div class="birthday">Date of Birth<div>
-                <input type="date" width="200px;" ng-model="birthday">
-                <br>
-              </div>
-              <!-- <input width="200px;" placeholder="Password for adminis ONLY. Non-admins ignore this text box." ng-model="admin" class="my_test"> -->
-              <button type="submit" ng-click="switchToIndex()" class="btn btn-danger form_button1">Cancel</button>
-              <button type="submit" ng-click="addNewPerson(firstName, lastName, email, password, phoneNumber, address, city, state, birthday)" class="btn btn-primary form_button2">Submit</button>
-            </form>
-          </div>
         </div>
-      </div> <!-- Don't know why this needs to be here for the show to work, but it does. By all accounts, it should be ruined because this div ends the ng-switch on, but somehow, with it it works and without it, it does not. -->
+      </div> <!-- This is end of index. -->
 
 
-      <div ng-switch-when="show" ng-init="getPersonData(parshaOfInterest.person_id)">
-        <p>PARSHA NAME: {{parshaOfInterest.name}}</p>
-        <div class="person_info" ng-if="!parshaOfInterest.available"><p ng-click="showPersonData = !showPersonData">BAL KORAI INFO: Click to View</p>
-          <ul ng-if="showPersonData">
-            <li>NAME: {{personData.first_name}} {{personData.last_name}}</li>
-            <li>EMAIL: {{personData.email}}</li>
-            <li>PASSWORD: {{personData.password}}</li>
-            <li>BIRTHDAY: {{personData.birthday}}</li>
-            <li>PHONE NUMBER: {{personData.phone}}</li>
-          </ul>
-        </div>
-        <div class="display_all_persons" ng-if="parshaOfInterest.available"><p ng-click="showAllPersonsData = !showAllPersonsData">CLICK HERE TO SHOW EMAIL AND PASSWORD OF ALL REGISTERED BALAI KORAI</p>
-          <ul ng-if="showAllPersonsData" ng-repeat="person in allPersonsData">
-            <li>NAME: {{person.first_name}} {{person.last_name}}</li>
-            <li>EMAIL: {{person.email}}</li>
-            <li>PASSWORD: {{person.password}}</li>
-            <li>BIRTHDAY: {{person.birthday}}</li>
-            <li>PHONE NUMBER: {{person.phone}}</li>
+
+
+
+
+
+      <div ng-switch-when="new">
+        <div  class="my_form">
+          <form>
+            <input width="200px;" placeholder="Enter your First Name" ng-model="firstName">
             <br>
-          </ul>
+            <input width="200px;" placeholder="Enter your Last Name" ng-model="lastName">
+            <br>
+            <input width="200px;" placeholder="Enter your Email" ng-model="email">
+            <br>
+            <input width="200px;" type="password" placeholder="Choose your password" ng-model="password">
+            <br>
+            <input width="200px;" placeholder="Enter a Phone Number" ng-model="phoneNumber">
+            <br>
+            <input width="200px;" placeholder="Enter your Address" ng-model="address">
+            <br>
+            <input width="200px;" placeholder="City" ng-model="city">
+            <br>
+            <input width="200px;" placeholder="State" ng-model="state">
+            <br>
+            <div class="birthday">Date of Birth<div>
+              <input type="date" width="200px;" ng-model="birthday">
+              <br>
+            </div>
+            <!-- <input width="200px;" placeholder="Password for adminis ONLY. Non-admins ignore this text box." ng-model="admin" class="my_test"> -->
+            <button type="submit" ng-click="switchToIndex()" class="btn btn-danger form_button1">Cancel</button>
+            <button type="submit" ng-click="addNewPerson(firstName, lastName, email, password, phoneNumber, address, city, state, birthday)" class="btn btn-primary form_button2">Submit</button>
+          </form>
         </div>
-        <p>
-          <input ng-model="firstId" placeholder="Enter your Email">
-          <br>
-          <input ng-model="password" placeholder="Enter the Password for your Account">
-          <br>
-          <button ng-click="switchToIndex()" class="btn btn-danger birthday">Cancel</button>
-          <button type="button" class="btn btn-primary birthday" ng-click="reserveParsha(parshaOfInterest, firstId, password)">{{correctMessage(parshaOfInterest)}}</button>
-        </div>
-
-
-
       </div>
+    </div> <!-- Don't know why this needs to be here for the show to work, but it does. By all accounts, it should be ruined because this div ends the ng-switch on, but somehow, with it it works and without it, it does not. -->
+
+
+    <div ng-switch-when="show" ng-init="getPersonData(parshaOfInterest.person_id)">
+      <p>PARSHA NAME: {{parshaOfInterest.name}}</p>
+      <div class="person_info" ng-if="!parshaOfInterest.available"><p ng-click="showPersonData = !showPersonData">BAL KORAI INFO: Click to View</p>
+        <ul ng-if="showPersonData">
+          <li>NAME: {{personData.first_name}} {{personData.last_name}}</li>
+          <li>EMAIL: {{personData.email}}</li>
+          <li>PASSWORD: {{personData.password}}</li>
+          <li>BIRTHDAY: {{personData.birthday}}</li>
+          <li>PHONE NUMBER: {{personData.phone}}</li>
+        </ul>
+      </div>
+      <div class="display_all_persons" ng-if="parshaOfInterest.available"><p ng-click="showAllPersonsData = !showAllPersonsData">CLICK HERE TO SHOW EMAIL AND PASSWORD OF ALL REGISTERED BALAI KORAI</p>
+        <ul ng-if="showAllPersonsData" ng-repeat="person in allPersonsData">
+          <li>NAME: {{person.first_name}} {{person.last_name}}</li>
+          <li>EMAIL: {{person.email}}</li>
+          <li>PASSWORD: {{person.password}}</li>
+          <li>BIRTHDAY: {{person.birthday}}</li>
+          <li>PHONE NUMBER: {{person.phone}}</li>
+          <br>
+        </ul>
+      </div>
+      <p>
+        <input ng-model="firstId" placeholder="Enter your Email">
+        <br>
+        <input ng-model="password" placeholder="Enter the Password for your Account">
+        <br>
+        <button ng-click="switchToIndex()" class="btn btn-danger birthday">Cancel</button>
+        <button type="button" class="btn btn-primary birthday" ng-click="reserveParsha(parshaOfInterest, firstId, password)">{{correctMessage(parshaOfInterest)}}</button>
+      </div>
+
+
+
     </div>
-
-
   </div>
+
+
+</div>
 </div>
