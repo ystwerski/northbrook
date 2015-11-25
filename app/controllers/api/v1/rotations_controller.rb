@@ -8,7 +8,7 @@ class Api::V1::RotationsController < ApplicationController
     @bamidbar = []
     @devorim = []
   	@seforim.each do |sefer|
-      parshious = sefer.parshas
+      parshious = sefer.parshas.sort
       parshious.each do |parsha|
         if parsha.sefer.name == "בראשית"
           @beraishis << parsha
