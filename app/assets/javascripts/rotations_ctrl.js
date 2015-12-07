@@ -11,6 +11,10 @@
   		$scope.vayikrah = $scope.apiData.vayikrah;
   		$scope.bamidbar = $scope.apiData.bamidbar;
   		$scope.devorim = $scope.apiData.devorim;
+      $http.get("/api/v1/persons.json").then(function(response){
+        var apiAllPersonsData = response.data;
+        $scope.allPersonsData = apiAllPersonsData.all_persons_info;
+      })
   	});
   }
 
@@ -63,6 +67,10 @@
     $scope.parshaOfInterest = parsha;
   }
 
+  $scope.switchToEdit = function(){
+    $scope.parshious = "edit";
+  }
+
   $scope.addNewPerson = function(firstName, lastName, email, password, phoneNumber, address, city, state, birthday){
   	var person = {first_name: firstName, last_name: lastName, email: email, password: password, phone_number: phoneNumber, address: address, city: city, state: state, birthday: birthday};
   	$http.post("api/v1/persons.json", person).then(function(response){
@@ -71,6 +79,20 @@
   		$scope.errors = error.data.errors;
   	})
   	$scope.parshious = "index";
+  }
+
+  $scope.findPerson = function(email, password){
+    $scope.getPersonData(null);
+    $scope.foundPerson = false;
+    angular.forEach($scope.allPersonsData, function(particularPerson){
+      if (particularPerson.email == email && particularPerson.password == password){
+        $scope.personOfInterest = particularPerson;
+        $scope.foundPerson = true;
+      }
+    })
+    if (!$scope.foundPerson){
+        $scope.personOfInterest = "I'm sorry, we have no record of such a person. Please check to make sure you have spelled everything correctly.";
+    }
   }
 
   $scope.reserveParsha = function(parsha, firstId, password){

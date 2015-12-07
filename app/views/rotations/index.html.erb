@@ -1,14 +1,45 @@
-<div id="page-wrap">
 <div ng-app="app">
   <div ng-controller="rotationsCtrl" ng-init="getInfo()">
 
 
 
     <div ng-switch on="parshious">
+      
+      <div ng-switch-when="edit">
+        <div class="center">
+          <p>Please enter your info:</p>
+          <input ng-model="email" placeholder="Enter your Email">
+          <br>
+          <input ng-model="password1" placeholder="Enter the Password for your Account">
+          <br>
+          <button ng-click="switchToIndex()" class="btn btn-danger birthday">Cancel</button>
+          <button type="button" class="btn btn-primary birthday" ng-click="findPerson(email, password1)">Find</button>
+          <!-- <table ng-if="foundPerson">
+            <tr>
+              <td>
+                <h3>PERSON ID:</h3> <p>{{personOfInterest.person_id}}</p>
+              </td>
+              <td >
+                <h3>PERSON NAME:</h3> <p>{{personOfInterest.first_name + " " + personOfInterest.last_name}}</p>
+              </td>
+            </tr>
+          </table> -->
+          <br>
+          <br>
+          <ul ng-if="foundPerson" class="personInfo">
+            <li><h3>PERSON ID:</h3> {{personOfInterest.person_id}}</li>
+            <li><h3>PERSON NAME:</h3> <p>{{personOfInterest.first_name + " " + personOfInterest.last_name}}</p></li>
+          </ul>
+        </div>
+      </div>
+
+
       <div ng-switch-when="index">
         <div class="top">
+          <button class="btn btn-info" ng-click="switchToEdit()">Update Existing Account</button>
+        </div>
+        <div class="top">
           <button class="btn btn-info" ng-click="switchToNew()">Create an Account</button>
-          <!-- <p ng-click="switchFormStatus()">Create an account</p> -->
         </div>
         <div class="top2">
           <p><button type="button" class="btn btn-success">available</button> - Click to Reserve.</p>
@@ -122,5 +153,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>
