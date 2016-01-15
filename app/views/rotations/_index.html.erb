@@ -1,0 +1,48 @@
+<div class="top">
+          <button class="btn btn-info" ng-click="switchToEdit()">Update Existing Account</button>
+        </div>
+        <div class="top">
+          <button class="btn btn-info" ng-click="switchToNew()">Create an Account</button>
+        </div>
+        <div class="top2">
+          <p><button type="button" class="btn btn-success">available</button> - Click to Reserve.</p>
+        </div>
+        <div class="top2">
+          <p><button type="button" class="btn btn-danger">unavailable</button> - Click to Cancel.</p>
+        </div>
+        <br>
+        
+        <div class="center">
+          <h1>קריאת התורה ד'נורטברוק</h1>
+
+          <div class="Beraishis">
+            <h3>בראשית</h3>
+            <div ng-repeat="parsha in beraishis">
+              <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            </div>
+          </div>
+          <div class="Shemos">
+            <h3>שמות</h3>
+            <div ng-repeat="parsha in shemos">
+              <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            </div>
+          </div>
+          <div class="Vayikrah">
+            <h3>ויקרא</h3>
+            <div ng-repeat="parsha in vayikrah">
+              <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            </div>
+          </div>
+          <div class="Bamidbar">
+            <h3>במדבר</h3>
+            <div ng-repeat="parsha in bamidbar">
+              <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            </div>
+          </div>
+          <div class="Devorim">
+            <h3>דברים</h3>
+            <div ng-repeat="parsha in devorim">
+              <button type="button"  class="btn btn-{{checkAvailable(parsha)}}" id="real_btn" ng-click="switchToShow(parsha)">{{parsha.name}}</button>
+            </div>
+          </div>
+        </div>

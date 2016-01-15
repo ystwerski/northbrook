@@ -1,0 +1,26 @@
+<div  class="center">
+  <form>
+    <input width="200px;" placeholder="Enter your First Name" ng-model="firstName">
+    <br>
+    <input width="200px;" placeholder="Enter your Last Name" ng-model="lastName">
+    <br>
+    <input width="200px;" placeholder="Enter your Email" ng-model="email">
+    <br>
+    <input width="200px;" type="password" placeholder="Choose your password" ng-model="password">
+    <br>
+    <input width="200px;" placeholder="Enter a Phone Number" ng-model="phoneNumber">
+    <br>
+    <input width="200px;" placeholder="Enter your Address" ng-model="address">
+    <br>
+    <input width="200px;" placeholder="City" ng-model="city">
+    <br>
+    <input width="200px;" placeholder="State" ng-model="state">
+    <br>
+    <div class="birthday"><p>Date of Birth</p>
+      <input type="date" width="200px;" ng-model="birthday">
+      <br>
+    </div>
+    <button type="submit" ng-click="switchToIndex()" class="btn btn-danger form_button1">Cancel</button>
+    <button type="submit" ng-click="addNewPerson(firstName, lastName, email, password, phoneNumber, address, city, state, birthday)" class="btn btn-primary form_button2">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<p>PARSHA NAME: {{parshaOfInterest.name}}</p>
+<div class="person_info" ng-if="!parshaOfInterest.available"><p ng-click="showPersonData = !showPersonData">BAL KORAI INFO: Click to View</p>
+  <ul ng-if="showPersonData">
+    <li>NAME: {{personData.first_name}} {{personData.last_name}}</li>
+    <li>EMAIL: {{personData.email}}</li>
+    <li>PASSWORD: {{personData.password}}</li>
+    <li>BIRTHDAY: {{personData.birthday}}</li>
+    <li>PHONE NUMBER: {{personData.phone}}</li>
+</ul>
+</div>
+<div class="display_all_persons" ng-if="parshaOfInterest.available"><p ng-click="showAllPersonsData = !showAllPersonsData">CLICK HERE TO SHOW EMAIL AND PASSWORD OF ALL REGISTERED BALAI KORAI</p>
+  <ul ng-if="showAllPersonsData" ng-repeat="person in allPersonsData">
+    <li>NAME: {{person.first_name}} {{person.last_name}}</li>
+    <li>EMAIL: {{person.email}}</li>
+    <li>PASSWORD: {{person.password}}</li>
+    <li>BIRTHDAY: {{person.birthday}}</li>
+    <li>PHONE NUMBER: {{person.phone}}</li>
+    <br>
+</ul>
+</div>
+<input ng-model="firstId" placeholder="Enter your Email">
+<br>
+<input ng-model="password" placeholder="Enter the Password for your Account">
+<br>
+<button ng-click="switchToIndex()" class="btn btn-danger birthday">Cancel</button>
+<button type="button" class="btn btn-primary birthday" ng-click="reserveParsha(parshaOfInterest, firstId, password)">{{correctMessage(parshaOfInterest)}}</button>
