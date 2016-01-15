@@ -1,11 +1,11 @@
-        <div class="center">
-          <p>Please enter your info:</p>
-          <input ng-model="email" placeholder="Enter your Email">
-          <br>
-          <input ng-model="password1" placeholder="Enter the Password for your Account">
-          <br>
-          <button ng-click="switchToIndex()" class="btn btn-danger birthday">Cancel</button>
-          <button type="button" class="btn btn-primary birthday" ng-click="findPerson(email, password1)">Find</button>
+<div class="center">
+  <p>Please enter your info:</p>
+  <input ng-model="email" placeholder="Enter your Email">
+  <br>
+  <input ng-model="password1" placeholder="Enter the Password for your Account">
+  <br>
+  <button ng-click="switchToIndex()" class="btn btn-danger birthday">Cancel</button>
+  <button type="button" class="btn btn-primary birthday" ng-click="findPerson(email, password1)">Find</button>
           <!-- <table ng-if="foundPerson">
             <tr>
               <td>
@@ -16,10 +16,10 @@
               </td>
             </tr>
           </table> -->
-          <br>
-          <br>
-          <ul ng-if="foundPerson" class="personInfo">
-            <li><h3>PERSON ID:</h3> {{personOfInterest.person_id}}</li>
-            <li><h3>PERSON NAME:</h3> <p>{{personOfInterest.first_name + " " + personOfInterest.last_name}}</p></li>
-          </ul>
-        </div>
+  <br>
+  <br>
+  <ul ng-if="foundPerson" class="personInfo">
+    <li><h3>PERSON ID:</h3> {{personOfInterest.person_id}}</li>
+    <li><h3>PERSON NAME:</h3> <p>{{personOfInterest.first_name + " " + personOfInterest.last_name}}</p></li>
+  </ul>
+</div>
